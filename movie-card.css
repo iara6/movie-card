@@ -5,8 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
-  --highlight: rgb(163, 17, 199);
+  --font-clr: rgb(236, 232, 226);
+  --highlight: rgb(237, 190, 72);
+  --highlight2: rgb(238, 205, 120);
 }
 
 body {
@@ -14,12 +17,21 @@ body {
   display: grid;
   place-items: center;
   font-family: "Heebo", sans-serif;
+  color: var(--font-clr);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4)), url('https://avatars.mds.yandex.net/get-kinopoisk-image/4486362/6cfb5e3c-53d5-4aec-8e56-e72ef53cf060/3840x'), url("bg.webp");
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(1px);
 }
+
 .movie-card {
+ /*  background-color: rgb(0, 0, 0, 0.8); */
+  background:linear-gradient(180deg,rgb(42, 42, 42) 0%, rgb(34, 34, 34) 35%, rgba(0, 0, 0, 1) 100%);
+  border-radius: 6px;
   padding: 2.8rem;
   /* width: 60rem; */
   width: min(60rem, 95vw);
-  border: 1px solid green;
+  box-shadow: 0 0 14px 2px wheat;
 }
 .title-rating {
   display: flex;
@@ -34,6 +46,13 @@ h1 span {
 .genre {
   font-size: 1.1rem;
   color: var(--highlight);
+}
+.rating {
+  font-size: 1.1rem;
+}
+.rating span {
+  color: var(--highlight);
+  font-weight: 800;
 }
 .description-container {
   display: flex;
@@ -54,9 +73,10 @@ h1 span {
 }
 
 .movie-description {
-  border: 1px solid teal;
   padding-right: 5rem;
-  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+ /*  flex: 1 1 auto; */
 }
 .synopsis {
   margin-bottom: 2rem;
@@ -68,11 +88,19 @@ h1 span {
 .cast-and-crew h3 {
   line-height: 2;
 }
+
 .cast-and-crew li {
   list-style: none;
   font-size: 0.85rem;
   color: var(--highlight);
   line-height: 1.5;
+}
+
+.cast-and-crew li a {
+  color: var(--highlight);
+}
+.cast-and-crew li a:hover {
+  color: var(--highlight2);
 }
 .more {
   font-weight: 650;
@@ -81,4 +109,41 @@ h1 span {
 }
 .cast-and-crew a {
   text-decoration: none;
+}
+
+.buttons {
+  text-align: end;
+  margin-top: auto;
+}
+
+.buttons button {
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
+  border-radius: 2rem;
+  border: 2px solid var(--highlight);
+  transition: all 250ms ease-out;
+  cursor: pointer;
+}
+
+.buttons button:first-child {
+  background-color: var(--highlight);
+  font-weight: 600;
+}
+
+.buttons button:last-child {
+  background-color: transparent;
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+.buttons button:first-child:hover {
+  background-color: var(--highlight2);
+  border: 2px solid var(--highlight2);
+}
+
+.buttons button:last-child:hover {
+  border: 2px solid var(--highlight2);
+  /* color: var(--highlight2); */
+  background-color: var(--highlight2);
+  color: black;
 }
