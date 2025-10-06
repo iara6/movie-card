@@ -8,6 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <!-- FAVICON-->
+  <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAP8zAOYA/wAAAP8A/wANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMzMzMAAABERERERAAAABERERERAAAAIiIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAREREREQAAAAiIiIiIgAAABERERERAAAAMzMzMzMAAAAAAAAAAAAAAAAAAAAAAAAAEREREREAAAAiIiIiIgAAADMzMzMzAAAAREREREQABAAgAAAAAAAEACAAAAAAAAQAIAAAAAAABAAgAAAAAAAEACAAAAAAAAQAIAAAAAAABAAgAAAAAAAEACAAAAAAAA" rel="icon" type="image/x-icon">
   <title>Movie Card</title>
 </head>
 <body>
@@ -26,6 +31,15 @@
       <div class="movie-poster">
         <img src="https://a.ltrbxd.com/resized/film-poster/1/0/1/1/9/5/4/1011954-good-one-0-2000-0-3000-crop.jpg?v=29c010f6cd" alt="movie poster">
       </div>
+
+      <div class="modal"> 
+        <span class="close"><i class="fa-solid fa-circle-xmark"></i></span>
+        <div class="modal-img-container">
+          <img class="modal-content" id="img01">
+        </div>
+      </div>
+            
+
       <div class="movie-description">
         <div class="synopsis">
           On a weekend backpacking trip in the Catskills, 17-year-old Sam contends with the competing egos of her father and his oldest friend.
@@ -59,8 +73,9 @@
           </div>
         </div>
         <div class="buttons">
-          <button>watch trailer</button>
-          <button>buy</button>
+          <button>watch trailer<i class="fa-solid fa-circle-play"></i></button>
+          <a href="https://www.amazon.com/gp/video/detail/B0DBC4FG58" target="_blank"><button class="buy">buy</button></a>
+            
         </div>
 
       </div>
