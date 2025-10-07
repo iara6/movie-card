@@ -178,9 +178,11 @@ h1 span {
 .modal.open {
   display: block;
 }
+
 body.modal-open {
   overflow: hidden;
 }
+
 .close {
   position: absolute;
   right: 2rem;
@@ -205,8 +207,16 @@ body.modal-open {
 }
 
 .modal-content {
-  display: block;
+  opacity: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: opacity 350ms ease-out;
+}
+.modal-content.modal-open {
+  opacity: 1;
+}
+
+.trailer {
+  display: none;
 }
