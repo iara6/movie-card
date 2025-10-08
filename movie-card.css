@@ -10,7 +10,8 @@
   --font-clr: rgb(236, 232, 226);
   --highlight: rgb(237, 190, 72);
   --highlight2: rgb(238, 205, 120);
-  --transition: transition: all 250ms ease-out;
+  --transition: all 250ms ease-out;
+  --transition2: all 350ms ease-in-out;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
   width: min(60rem, 95vw);
   box-shadow: 0 0 15px 3px wheat;
 }
+
 .title-rating {
   display: flex;
   align-items: center;
@@ -42,17 +44,21 @@ body {
 h1 span {
   font-size: 1.5rem;
 }
+
 .genre {
   font-size: 1.1rem;
   color: var(--highlight);
 }
+
 .rating {
   font-size: 1.1rem;
 }
+
 .rating span {
   color: var(--highlight);
   font-weight: 800;
 }
+
 .description-container {
   display: flex;
   gap: 2.5rem;
@@ -69,22 +75,29 @@ h1 span {
   width: 100%;
   height: auto;
   border-radius: 6px;
+  transition: var(--transition2);
+}
+
+.movie-poster img:hover {
+  box-shadow: 0 0 8px 1px wheat;
 }
 
 .movie-description {
   display: flex;
   flex-direction: column;
- /*  flex: 1 1 auto; */
 }
+
 .synopsis {
   margin-bottom: 2rem;
   padding-right: 5rem;
 }
+
 .cast-and-crew {
   display: flex;
   justify-content: space-between;
   padding-right: 5rem;
 }
+
 .cast-and-crew h3 {
   line-height: 2;
 }
@@ -99,20 +112,22 @@ h1 span {
 .cast-and-crew li a {
   color: var(--highlight);
 }
+
 .cast-and-crew li a:hover {
   color: var(--highlight2);
 }
+
 .more {
   font-weight: 650;
   margin-top: 1rem;
   text-decoration: underline;
 }
+
 .cast-and-crew a {
   text-decoration: none;
 }
 
 .buttons {
- /*  text-align: end; */
   display: flex;
   margin-top: auto;
   justify-content: right;
@@ -135,10 +150,12 @@ h1 span {
   display: flex;
   align-items: center;
 }
+
 .fa-circle-play {
   font-size: 2.1rem;
   margin-left: 8px;
 }
+
 .buttons button:last-child {
   background-color: transparent;
   color: var(--highlight);
@@ -165,7 +182,7 @@ h1 span {
 }
 
 .modal {
-  display: none; /*  */
+  display: none;
   position: fixed; 
   z-index: 100; 
   left: 0;
@@ -197,7 +214,7 @@ body.modal-open {
   opacity: 0.9;
 }
 
-.modal-img-container {
+.modal-container {
   height: 90vh;
   width: auto;
   position: absolute;
@@ -208,15 +225,29 @@ body.modal-open {
 
 .modal-content {
   opacity: 0;
+  pointer-events: none;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: opacity 350ms ease-out;
+  transition: var(--transition2);
 }
 .modal-content.modal-open {
   opacity: 1;
 }
 
 .trailer {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  aspect-ratio: 16/9;
+  width: min(80vw, calc(16 / 9 * 90vh)); 
+  max-height: 90vh;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--transition2);
+}
+.trailer.modal-open  {
+  opacity: 1;
 }

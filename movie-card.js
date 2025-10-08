@@ -7,21 +7,27 @@ const moviePoster = document.querySelector('.movie-poster img');
 const modalImg = document.getElementById('img1');
 const closeBtn = document.querySelector('.close');
 
-function openModal(src) {
+const watchBtn = document.querySelector('.watch-trailer-button');
+const trailer = document.querySelector('.trailer');
+
+function openModalPoster(src) {
   modalImg.src = src;
   modal.classList.add('open');
   document.body.classList.add('modal-open');
-  setTimeout(() => modalImg.classList.add('modal-open'), 35);
+ /*  setTimeout(() => modalImg.classList.add('modal-open'), 35); */
+  requestAnimationFrame(() => modalImg.classList.add('modal-open'));
 }
 
 function closeModal() {
   modal.classList.remove('open');
   document.body.classList.remove('modal-open');
   modalImg.classList.remove('modal-open');
+  trailer.classList.remove('modal-open');
+  trailer.src = trailer.src;
 }
 
 moviePoster.addEventListener('click', (e) => {
-  openModal(e.target.src);
+  openModalPoster(e.target.src);
 });
 
 closeBtn.addEventListener('click', closeModal);
@@ -35,4 +41,11 @@ modal.addEventListener('click', (e) => {
  TRAILER MODAL 
 ***************/
 
-const watchBtn = document.querySelector('.watch-trailer-button');
+function openModalTrailer() {
+  modal.classList.add('open');
+  document.body.classList.add('modal-open');
+ /*  setTimeout(() => trailer.classList.add('modal-open'), 35); */
+  requestAnimationFrame(() => trailer.classList.add('modal-open'));
+}
+
+watchBtn.addEventListener('click', openModalTrailer);
