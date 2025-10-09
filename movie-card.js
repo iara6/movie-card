@@ -34,6 +34,15 @@ closeBtn.addEventListener('click', closeModal);
 
 modal.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
+
+  const visibleContent = modal.querySelector('.modal-open');
+  const visibleContentArea = visibleContent.getBoundingClientRect();
+  const x = e.clientX;
+  const y = e.clientY;
+  
+  const clickOutside = x < visibleContentArea.left || x > visibleContentArea.right || y < visibleContentArea.top || y > visibleContentArea.bottom;
+
+  if (clickOutside) closeModal();
 });
 
 
