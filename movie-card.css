@@ -96,6 +96,7 @@ h1 span {
   display: flex;
   justify-content: space-between;
   padding-right: 5rem;
+  gap: 1.5rem;
 }
 
 .cast-and-crew h3 {
@@ -107,6 +108,7 @@ h1 span {
   font-size: 0.85rem;
   color: var(--highlight);
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .cast-and-crew li a {
@@ -194,10 +196,6 @@ h1 span {
 }
 .modal.open {
   display: block;
-  /*  */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 body.modal-open {
@@ -259,4 +257,83 @@ body.modal-open {
 .trailer.modal-open  {
   opacity: 1;
   visibility: visible;
+}
+
+@media screen and (max-width:930px) {
+  .movie-card {
+    padding: 2.2rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h1 span {
+    font-size: 1.2rem;
+  }
+  .genre,
+  .rating,
+  .cast-and-crew h3 {
+    font-size: 1rem;
+  }
+  .synopsis {
+    font-size: 0.9rem;
+  }
+  .cast-and-crew li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width:850px) {
+  .cast-and-crew {
+    padding-right: 3rem;
+  }
+  .buttons button {
+    height: 2rem;
+    border-radius: 2rem;
+  }
+  .fa-circle-play {
+    font-size: 1.75rem;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (max-width:750px) {
+  .movie-card {
+    padding: 1.5rem 2.2rem;
+  }
+  .description-container {
+    flex-direction: column;
+  }
+  .movie-poster {
+    margin-inline: auto;
+    max-width: 200px;
+    min-width: 150px; 
+  }
+  .synopsis {
+    margin-bottom: 1rem;
+  }
+  .cast-and-crew,
+  .synopsis {
+    padding-right: 0;
+  }
+  .buttons {
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  .buttons button {
+    height: 1.8rem;
+    border-radius: 2rem;
+    font-size: 0.7rem;
+  }
+  .fa-circle-play {
+    font-size: 1.6rem;
+    margin-left: 6px;
+  }
+  .buttons button:first-child {
+    font-weight: 550;
+    padding-left: 0.85rem;
+  }
+  .buttons button:last-child {
+    font-weight: 550;
+    padding-inline: 0.85rem;
+  }
 }
